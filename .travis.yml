@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - '0.12'
+  - '4.0'
+  - '5.0'
+
+script: cd test; bin/bats --tap test.bats
+
+notifications:
+  email: false
