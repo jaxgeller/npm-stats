@@ -8,6 +8,12 @@ Npm-stats does the following
 + Keeps track of all installs and logs them
 + Can generate graphs, output
 
+### Why
+
+I wondered how much of my life i was spending waiting on npm modules to install.
+
+It seems nowadays that authors migrate their codebases to use lots of small modules rather than having large monoliths. This is great for developing, but not so great for the end user.
+
 ### Installation
 
 For now clone this repo, and add npm-stats.sh to your `*sh profile`. Make sure to source it like so
