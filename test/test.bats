@@ -37,5 +37,3 @@ rm -rf node_modules
   results=$(npm-stats | awk '{print $6}')
   [ $results -eq 5 ]
 }
-
-exit 0
