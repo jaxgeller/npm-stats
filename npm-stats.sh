@@ -33,3 +33,14 @@ npm-stats() {
 
   echo "You've run npm install $installs times. For a total of $total seconds."
 }
+
+_npm-stats-graph() {
+  gnuplot -e '
+    set ylabel "timing";
+    set xlabel "date";
+    set terminal dumb;
+    set timefmt "%Y-%m-%d %H:%M:%S";
+    set xdata time;
+    plot "timing" using 1:3 with dots notitle
+  '
+}
