@@ -29,6 +29,12 @@ Usage:
   npm-stats version     Show the current version installed
 ```
 
+### How it works
+
+npm-stats is a simple bash script. When you source it into your shell, it acts as a simple prefilter to npm. If you run any command associated with installing, it appends to a log at `~/.npm-stats/timing` with the date and how long it took in seconds.
+
+npm-stats also provides some helper functions to help understand the logging, such as graphing and parsing the log.
+
 ### Examples
 
 ```sh
