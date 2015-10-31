@@ -3,18 +3,11 @@
 npm() {
   if [ "$1" == "i" ] || [[ $1 == ins* ]]; then
     start=$(date -u +"%s")
-
-    if [ -z "$2" ]; then
-      command npm $1
-    else
-      command npm $1 $@
-    fi
-
+    command npm $@
     end=$(date -u +"%s")
     difference=$(($end-$start))
     mkdir -p ~/.npm-stats
     echo "$difference" >> ~/.npm-stats/timing
-
   else
     command npm $1
   fi

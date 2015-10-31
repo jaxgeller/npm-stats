@@ -6,34 +6,35 @@ rm -rf node_modules
 
 @test "test install singular" {
   npm install lodash
-  results=$(npm-stats | awk '{print $6}')
-  [ $results -eq 1 ]
+
+  results=$(npm-stats | awk '{print $5}')
+  [ "$results" -eq "1" ]
 }
 
 @test "test install singular with abreviation 1" {
-  npm i lodash
+  npm i underscore
 
-  results=$(npm-stats | awk '{print $6}')
-  [ $results -eq 2 ]
+  results=$(npm-stats | awk '{print $5}')
+  [ "$results" -eq "1" ]
 }
 
 @test "test install singular with abreviation 2" {
-  npm ins lodash
+  npm ins async
 
-  results=$(npm-stats | awk '{print $6}')
-  [ $results -eq 3 ]
+  results=$(npm-stats | awk '{print $5}')
+  [ "$results" -eq "1" ]
 }
 
 @test "test install multiple" {
-  npm install bower grunt less
+  npm install request chalk
 
-  results=$(npm-stats | awk '{print $6}')
-  [ $results -eq 4 ]
+  results=$(npm-stats | awk '{print $5}')
+  [ "$results" -eq "1" ]
 }
 
 @test "test install from package.json" {
   npm install
 
-  results=$(npm-stats | awk '{print $6}')
-  [ $results -eq 5 ]
+  results=$(npm-stats | awk '{print $5}')
+  [ "$results" -eq "1" ]
 }
