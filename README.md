@@ -1,13 +1,7 @@
 [![Build Status](https://travis-ci.org/jaxgeller/npm-stats.svg?branch=master)](https://travis-ci.org/jaxgeller/npm-stats)
 
 # npm-stats
-Takes stats of npm commands.
-
-### Why
-
-I wondered how much of my life I was spending waiting on npm modules to install.
-
-It seems nowadays that authors migrate their codebases to use lots of small modules rather than having large monoliths. This is great for developing, but not so great for the end user. Because of this, you end up spending a ton of time waiting for modules to install.
+Ever wonder how much of your life you spend on npm installs? npm-stats logs how much time you spend running npm commands.
 
 ### Installation
 
