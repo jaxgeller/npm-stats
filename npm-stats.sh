@@ -18,6 +18,17 @@ npm() {
 }
 
 npm-stats() {
+
+  if [ "$1" == "usage" ] || [ "$1" == "help" ]; then
+    _npm-stats-usage
+    return 0
+  fi
+
+  if [ "$1" == "version" ]; then
+    _npm-stats-version
+    return 0
+  fi
+
   if [ ! -f "$NPM_STATS_ROOT/timing" ]; then
     echo "No stats to report right now"
     return 1
@@ -25,30 +36,27 @@ npm-stats() {
 
   if [ "$1" == "" ]; then
     _npm-stats-normal
+    return 0
   fi
 
   if [ "$1" == "dates" ]; then
     _npm-stats-dates
+    return 0
   fi
 
   if [ "$1" == "timing" ]; then
     _npm-stats-timing
+    return 0
   fi
 
   if [ "$1" == "graph" ]; then
     _npm-stats-graph
+    return 0
   fi
 
   if [ "$1" == "raw" ]; then
     _npm-stats-raw
-  fi
-
-  if [ "$1" == "usage" ] || [ "$1" == "help" ]; then
-    _npm-stats-usage
-  fi
-
-  if [ "$1" == "version" ]; then
-    _npm-stats-version
+    return 0
   fi
 }
 
