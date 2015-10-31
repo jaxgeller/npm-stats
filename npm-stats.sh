@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NPM_STATS_ROOT="$HOME/.npm-stats"
-VERSION="1.0.0"
+NPM_STATS_VERSION="1.0.0"
 
 npm() {
   if [ "$1" == "i" ] || [[ $1 == ins* ]]; then
@@ -27,27 +27,27 @@ npm-stats() {
     _npm-stats-normal
   fi
 
-  if [ $1 -eq "dates" ]; then
+  if [ "$1" == "dates" ]; then
     _npm-stats-dates
   fi
 
-  if [ $1 -eq "timing" ]; then
+  if [ "$1" == "timing" ]; then
     _npm-stats-timing
   fi
 
-  if [ $1 -eq "graph" ]; then
+  if [ "$1" == "graph" ]; then
     _npm-stats-graph
   fi
 
-  if [ $1 -eq "raw" ]; then
+  if [ "$1" == "raw" ]; then
     _npm-stats-raw
   fi
 
-  if [ $1 -eq "usage" ]; then
+  if [ "$1" == "usage" ] || [ "$1" == "help" ]; then
     _npm-stats-usage
   fi
 
-  if [ $1 -eq "version" ]; then
+  if [ "$1" == "version" ]; then
     _npm-stats-version
   fi
 }
@@ -76,15 +76,8 @@ _npm-stats-raw() {
   cat "$NPM_STATS_ROOT/timing"
 }
 
-_npm-stats-graph() {
-  gnuplot -e '
-    set ylabel "timing";
-    set xlabel "date";
-    set terminal dumb;
-    set timefmt "%Y-%m-%d %H:%M:%S";
-    set xdata time;
-    plot "timing" using 1:3 with dots notitle
-  '
+_npm-stats-clean() {
+  rm -rf "$NPM_STATS_ROOT"
 }
 
 _npm-stats-usage() {
@@ -97,7 +90,23 @@ _npm-stats-usage() {
   npm-stats timing      Just show timing data
   npm-stats graph       Show a graph of the stats
   npm-stats raw         Outputs raw data
+  npm-stats clean       Removes ~/.npm-stats
   npm-stats help        Show this message
-  npm-stats version   Show the current version installed
+  npm-stats version     Show the current version installed
   "
+}
+
+_npm-stats-version() {
+  echo "$NPM_STATS_VERSION"
+}
+
+_npm-stats-graph() {
+  gnuplot -e '
+    set ylabel "timing";
+    set xlabel "date";
+    set terminal dumb;
+    set timefmt "%Y-%m-%d %H:%M:%S";
+    set xdata time;
+    plot "~/.npm-stats/timing" using 1:3 with dots notitle
+  '
 }
