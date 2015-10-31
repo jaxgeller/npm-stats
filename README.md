@@ -1,14 +1,12 @@
-[![Build Status](https://travis-ci.org/jaxgeller/npm-stats.svg?branch=master)](https://travis-ci.org/jaxgeller/npm-stats)
-
 # npm-stats
 Ever wonder how much of your life you spend on npm installs? npm-stats logs how much time you spend running npm commands.
+
+[![Build Status](https://travis-ci.org/jaxgeller/npm-stats.svg?branch=master)](https://travis-ci.org/jaxgeller/npm-stats)
 
 ### Installation
 
 + Clone this repo to your home like, $HOME/.npm-stats
 + Source this script with you profile of choice. Make sure to add it at the end
-
-Example
 
 ```sh
 mkdir -p "$HOME/.npm-stats"
