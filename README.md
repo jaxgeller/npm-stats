@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jaxgeller/npm-stats.svg?branch=master)](https://travis-ci.org/jaxgeller/npm-stats)
+
 # npm-stats
 Counts the number of times you run `npm install` and keeps track of how long each iteration takes.
 
