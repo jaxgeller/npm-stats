@@ -1,7 +1,5 @@
-# npm-stats
+# npm-stats [![Build Status](https://travis-ci.org/jaxgeller/npm-stats.svg?branch=master)](https://travis-ci.org/jaxgeller/npm-stats)
 Ever wonder how much of your life you spend on npm installs? npm-stats logs how much time you spend running npm commands.
-
-[![Build Status](https://travis-ci.org/jaxgeller/npm-stats.svg?branch=master)](https://travis-ci.org/jaxgeller/npm-stats)
 
 ### Installation
 
