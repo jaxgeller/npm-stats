@@ -1,0 +1,20 @@
+{
+  "name": "npm-stats",
+  "private": "true",
+  "version": "1.0.0",
+  "description": "npm-stats testing",
+  "author": "Jackson Geller <jacksongeller@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "install": "^0.2.3",
+    "mongoose": "^4.2.3"
+  },
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-sass": "^2.1.0",
+    "install": "^0.2.3"
+  }
+}
