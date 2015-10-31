@@ -3,25 +3,23 @@
 # npm-stats
 Takes stats of npm commands.
 
-Npm-stats does the following
-
-+ Keeps track of all installs and logs them
-+ Can generate graphs, output
-
 ### Why
 
-I wondered how much of my life i was spending waiting on npm modules to install.
+I wondered how much of my life I was spending waiting on npm modules to install.
 
-It seems nowadays that authors migrate their codebases to use lots of small modules rather than having large monoliths. This is great for developing, but not so great for the end user.
+It seems nowadays that authors migrate their codebases to use lots of small modules rather than having large monoliths. This is great for developing, but not so great for the end user. Because of this, you end up spending a ton of time waiting for modules to install.
 
 ### Installation
 
-For now clone this repo, and add npm-stats.sh to your `*sh profile`. Make sure to source it like so
++ Clone this repo to your home like, $HOME/.npm-stats
++ Source this script with you profile of choice. Make sure to add it at the end
+
+Example
 
 ```sh
-#~/.zshrc
-
-source ~/npm-stats.sh
+mkdir -p "$HOME/.npm-stats"
+git clone https://github.com/jaxgeller/npm-stats "$HOME/.npm-stats"
+echo "source $HOME/.npm-stats/npm-stats.sh" >> some_*rc
 ```
 
 ### Use
@@ -40,7 +38,6 @@ Usage:
   npm-stats help        Show this message
   npm-stats version     Show the current version installed
 ```
-
 
 ### Examples
 
@@ -88,5 +85,3 @@ $ npm-stats raw
 2015-10-31 15:34:35 1
 2015-10-31 15:35:13 9
 ```
-
-

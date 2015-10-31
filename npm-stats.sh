@@ -76,10 +76,6 @@ _npm-stats-raw() {
   cat "$NPM_STATS_ROOT/timing"
 }
 
-_npm-stats-clean() {
-  rm -rf "$NPM_STATS_ROOT"
-}
-
 _npm-stats-usage() {
   echo
   echo "npm-stats v$VERSION"
@@ -90,7 +86,6 @@ _npm-stats-usage() {
   npm-stats timing      Just show timing data
   npm-stats graph       Show a graph of the stats
   npm-stats raw         Outputs raw data
-  npm-stats clean       Removes ~/.npm-stats
   npm-stats help        Show this message
   npm-stats version     Show the current version installed
   "
