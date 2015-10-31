@@ -108,7 +108,7 @@ _npm-stats-graph() {
     set ylabel "timing";
     set xlabel "date";
     set terminal dumb;
-    set timefmt "%Y-%m-%d %H:%M:%S";
+    set timefmt "%Y-%m-%d %H:%M:%S\t";
     set xdata time;
     plot "~/.npm-stats/timing" using 1:3 with dots notitle
   '
