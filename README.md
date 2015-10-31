@@ -3,7 +3,7 @@ Ever wonder how much of your life you spend on npm installs? npm-stats logs how 
 
 ### Installation
 
-+ Clone this repo to your home like, $HOME/.npm-stats
++ Clone this repo to your home like, `$HOME/.npm-stats`
 + Source this script with you profile of choice. Make sure to add it at the end
 
 ```sh
