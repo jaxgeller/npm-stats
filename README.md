@@ -1,22 +1,36 @@
 [![Build Status](https://travis-ci.org/jaxgeller/npm-stats.svg?branch=master)](https://travis-ci.org/jaxgeller/npm-stats)
 
 # npm-stats
-Counts the number of times you run `npm install` and keeps track of how long each iteration takes.
+Takes stats of npm commands.
 
-<img src="https://raw.githubusercontent.com/jaxgeller/npm-stats/master/npm-stats.gif" alt="npm-stats example"/>
+Npm-stats does the following
 
-
-It seems now-a-days that node module authors love to split things into tiny modules. It makes sense for the author, but for the consumer it kind of sucks.  Installing something like 20 modules at a time becomes the norm. I wanted to see how much of life I've wasted waiting for npm to install.
++ Keeps track of all installs and logs them
++ Can generate graphs, output
 
 ### Installation
 
-run `curl | sh`
+For now clone this repo, and add npm-stats.sh to your `*sh profile`. Make sure to source it like so
 
-or `git clone` this repo and add npm-stats in a safe place and source it in your *sh profile.
+```sh
+#~/.zshrc
 
+source ~/npm-stats.sh
+```
 
 ### Use
 
-npm-stats will hook into npm automatically, all you need to do is run `npm-stats`.
+npm-stats will hook into npm automatically, all you need to do is run `npm-stats` whenever you want some sweet stats.
 
-More docs and testing coming later
+```sh
+npm-stats v1.0.0
+
+Usage:
+  npm-stats             Show stats in human readable format
+  npm-stats dates       Just show date data
+  npm-stats timing      Just show timing data
+  npm-stats graph       Show a graph of the stats
+  npm-stats raw         Outputs raw data
+  npm-stats help        Show this message
+  npm-stats version     Show the current version installed
+```
