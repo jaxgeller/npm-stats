@@ -4,7 +4,13 @@ node_js:
   - '4.0'
   - '5.0'
 
-script: cd test; /bin/bats --tap test.bats
+script: cd test; bats --tap test.bats
 
 notifications:
   email: false
+
+before_script:
+  - git clone https://github.com/sstephenson/bats.git /tmp/bats
+  - mkdir -p /tmp/local
+  - bash /tmp/bats/install.sh /tmp/local
+  - export PATH=$PATH:/tmp/local/bin
