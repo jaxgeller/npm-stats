@@ -1,6 +1,7 @@
 #!/bin/bash
 
 NPM_STATS_ROOT="$HOME/.npm-stats"
+VERSION=1.0.0
 
 npm() {
   if [ "$1" == "i" ] || [[ $1 == ins* ]]; then
@@ -43,4 +44,19 @@ _npm-stats-graph() {
     set xdata time;
     plot "timing" using 1:3 with dots notitle
   '
+}
+
+npm-stats-usage() {
+  echo
+  echo "npm-stats v$VERSION"
+  echo
+  echo "Usage:
+  npm-stats             Show stats in human readable format
+  npm-stats help        Show this message
+  npm-stats raw         Outputs raw data
+  npm-stats timing      Just show timing data
+  npm-stats dates       Just show date data
+  npm-stats graph       Show a graph of the stats
+  npm-stats --version   Show the current version installed
+  "
 }
