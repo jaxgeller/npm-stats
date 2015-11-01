@@ -4,7 +4,7 @@ Ever wonder how much of your life you spend on npm installs? npm-stats logs how 
 ### Installation
 
 + Clone this repo to your home like, `$HOME/.npm-stats`
-+ Source this script with you profile of choice. Make sure to add it at the end
++ Source this script with your profile of choice. Make sure to add it at the end
 
 ```sh
 mkdir -p "$HOME/.npm-stats"
@@ -12,7 +12,7 @@ git clone https://github.com/jaxgeller/npm-stats "$HOME/.npm-stats"
 echo "source $HOME/.npm-stats/npm-stats.sh" >> some_*rc
 ```
 
-### Use
+### Usage
 
 npm-stats will hook into npm automatically, all you need to do is run `npm-stats` whenever you want some sweet stats.
 
@@ -31,9 +31,13 @@ Usage:
 
 ### How it works
 
-npm-stats is a simple bash script. When you source it into your shell, it acts as a simple prefilter to npm. If you run any command associated with installing, it appends to a log at `~/.npm-stats/timing` with the date and how long it took in seconds.
+npm-stats is a simple bash script. When you source it into your shell, it acts as a simple pre-filter to npm. If you run any command associated with installing, it appends to a log at `~/.npm-stats/timing` with the date and how long it took in seconds.
 
 npm-stats also provides some helper functions to help understand the logging, such as graphing and parsing the log.
+
+### Updating
+
+Updating is simple, just cd into `$HOME/.npm-stats`, run git pull, and refresh the shell.
 
 ### Examples
 

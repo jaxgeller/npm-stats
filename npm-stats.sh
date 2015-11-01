@@ -105,11 +105,13 @@ _npm-stats-version() {
 
 _npm-stats-graph() {
   gnuplot -e '
-    set ylabel "timing";
-    set xlabel "date";
     set terminal dumb;
-    set timefmt "%Y-%m-%d %H:%M:%S\t";
-    set xdata time;
-    plot "~/.npm-stats/timing" using 1:3 with dots notitle
+    set offset graph 0.01, graph 0.01, graph 0, graph 0;
+    set xlabel "timing";
+    set title "npm install timing distribution" offset 0,1;
+    binwidth=5;
+    set boxwidth binwidth;
+    bin(x,width)=width*floor(x/width) + binwidth/2.0;
+    plot "~/.npm-stats/timing" using (bin($1,binwidth)):(1.0) smooth freq with boxes notitle
   '
 }
