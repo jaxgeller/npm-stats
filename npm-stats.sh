@@ -73,11 +73,11 @@ _npm-stats-normal() {
 }
 
 _npm-stats-dates() {
-  cat "$NPM_STATS_ROOT/timing" | cut -f1 -d$'\t'
+  cut -f1 -d$'\t' "$NPM_STATS_ROOT/timing"
 }
 
 _npm-stats-timing() {
-  cat "$NPM_STATS_ROOT/timing" | cut -f2 -d$'\t'
+  cut -f2 -d$'\t' "$NPM_STATS_ROOT/timing"
 }
 
 _npm-stats-raw() {
@@ -86,7 +86,7 @@ _npm-stats-raw() {
 
 _npm-stats-usage() {
   echo
-  echo "npm-stats v$VERSION"
+  echo "npm-stats v$NPM_STATS_VERSION"
   echo
   echo "Usage:
   npm-stats             Show stats in human readable format
@@ -104,6 +104,8 @@ _npm-stats-version() {
 }
 
 _npm-stats-graph() {
+  cut -f2 -d$'\t' "$NPM_STATS_ROOT/timing" > "$NPM_STATS_ROOT/graph-data.dat"
+
   gnuplot -e '
     set terminal dumb;
     set offset graph 0.01, graph 0.01, graph 0, graph 0;
@@ -112,6 +114,6 @@ _npm-stats-graph() {
     binwidth=5;
     set boxwidth binwidth;
     bin(x,width)=width*floor(x/width) + binwidth/2.0;
-    plot "~/.npm-stats/timing" using (bin($1,binwidth)):(1.0) smooth freq with boxes notitle
+    plot "~/.npm-stats/graph-data.dat" using (bin($1,binwidth)):(1.0) smooth freq with boxes notitle
   '
 }
