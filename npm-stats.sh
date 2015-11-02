@@ -11,7 +11,7 @@ npm() {
     difference="$(($end-$start))"
     mkdir -p $NPM_STATS_ROOT
     date="$(date '+%Y-%m-%d %H:%M:%S')"
-    echo "$date\t$difference" >> "$NPM_STATS_ROOT/timing"
+    echo -e "$date\t$difference" >> "$NPM_STATS_ROOT/timing"
   else
     command npm $1
   fi
