@@ -35,6 +35,8 @@ npm-stats is a simple bash script. When you source it into your shell, it acts a
 
 npm-stats also provides some helper functions to help understand the logging, such as graphing and parsing the log.
 
+__Note: graphing requires gnuplot__
+
 ### Updating
 
 Updating is simple, just cd into `$HOME/.npm-stats`, run git pull, and refresh the shell.
