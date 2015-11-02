@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NPM_STATS_ROOT="$HOME/.npm-stats"
-NPM_STATS_VERSION="1.0.0"
+NPM_STATS_VERSION="1.0.1"
 
 npm() {
   if [ "$1" == "i" ] || [[ $1 == ins* ]]; then
