@@ -1,0 +1,28 @@
+{
+  "name": "npm-stats",
+  "version": "1.1.0",
+  "description": "stats for npm",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "postinstall": "mkdir -p $HOME/.npm-stats; cp npm-stats.sh $HOME/.npm-stats; echo -e 'ADD THIS TO YOUR SHELL `source ~/.npm-stats/npm-stats.sh`\n';",
+    "uninstall": "rm -r $HOME/.npm-stats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaxgeller/npm-stats.git"
+  },
+  "keywords": [
+    "npm",
+    "stats",
+    "stats"
+  ],
+  "author": "Jackson Geller <jacksongeller@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaxgeller/npm-stats/issues"
+  },
+  "homepage": "https://github.com/jaxgeller/npm-stats#readme"
+}
