@@ -4,7 +4,11 @@ Ever wonder how much of your life you spend on npm installs? npm-stats logs how 
 ### Installation
 
 ```sh
+npm install npmstats -g
+echo "source $HOME/.npm-stats/npm-stats.sh" >> some_*rc
 ```
+
+or
 
 + Clone this repo to your home like, `$HOME/.npm-stats`
 + Source this script with your profile of choice. Make sure to add it at the end
@@ -42,7 +46,8 @@ __Note: graphing requires gnuplot__
 
 ### Updating
 
-Updating is simple, just cd into `$HOME/.npm-stats`, run git pull, and refresh the shell.
+If you used npm, just run `npm update npmstats -g`.
+Otherwise, updating is simple, just cd into `$HOME/.npm-stats`, run git pull, and refresh the shell.
 
 ### Examples
 

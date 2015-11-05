@@ -1,6 +1,6 @@
 {
-  "name": "npm-stats",
-  "version": "1.1.0",
+  "name": "npmstats",
+  "version": "1.1.1",
   "description": "stats for npm",
   "main": "index.js",
   "directories": {
