@@ -51,7 +51,7 @@ Otherwise, updating is simple, just cd into `$HOME/.npm-stats`, run git pull, an
 
 ### Examples
 
-```sh
+```
 $ npm-stats
 
 You've run npm install 8 times. For a total of 28 seconds.
