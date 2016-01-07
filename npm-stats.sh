@@ -13,7 +13,7 @@ npm() {
     date="$(date '+%Y-%m-%d %H:%M:%S')"
     echo -e "$date\t$difference" >> "$NPM_STATS_ROOT/timing"
   else
-    command npm $1
+    command npm $@
   fi
 }
 
